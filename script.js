@@ -8,3 +8,8 @@ let name = 'Василий';
 admin = name;
 alert (admin);
 
+let a = 1000 +'108';
+alert (a);
+
+
+

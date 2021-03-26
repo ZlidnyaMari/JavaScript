@@ -11,7 +11,7 @@ alert (admin);
 let a = 1000 +'108';
 alert (a);*/
 
-var a = 1, b = 1, c, d;
+/*var a = 1, b = 1, c, d;
 c = ++a; alert(c); // Выведет 2 потому,что запись в префиксной форме ++а равноценна записи 1+а, а поскольку а=1, то 1+1=2.
 d = b++; alert(d); // Выведет 1 потому,что запись в постфиксной форме и сначала возвращается значение, а потом совершается инкремирование. 
 c = (2+ ++a); alert(c); // Переменная а=2, выполняется действие ++а, а=3, 2+3=5;
@@ -64,4 +64,33 @@ switch (a) {
         break; 
     default:
         alert ('Нет такого значения'); // Эту запись можно как-то сократить?
+} */
+
+
+function useNumber(x, y) {
+    return x + y;
 }
+let answer = useNumber(2, 3);
+alert (answer);
+
+function useNumber1(x, y) {
+    return x - y;
+}
+let answer1 = useNumber1(2, 3);
+alert (answer1);
+
+function useNumber2(x, y) {
+    return x * y;
+}
+let answer2 = useNumber2(2, 3);
+alert (answer2);
+
+function useNumber3(x, y) {
+    return x / y;
+}
+let answer3 = useNumber3(2, 3);
+alert (answer3);
+
+
+
+

@@ -101,7 +101,18 @@ function useNumber3(x, y) {
 let answer3 = useNumber3(2, 3);
 alert (answer3);*/
 
-
+function mathOperation(arg1, arg2, operation) {
+    switch (operation) {
+        case 'сумма' :
+            alert(arg1+arg2);
+            break;
+        case 'разность':
+            alert(arg1-arg2);
+            break;   
+    }        
+}
+mathOperation (2, 3 ,'сумма');
+mathOperation (2, 3 ,'разность');
 
 
 

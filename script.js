@@ -11,7 +11,7 @@ alert (admin);
 let a = 1000 +'108';
 alert (a);*/
 
-var a = 1, b = 1, c, d;
+/*var a = 1, b = 1, c, d;
 c = ++a; alert(c); // Выведет 2 потому,что запись в префиксной форме ++а равноценна записи 1+а, а поскольку а=1, то 1+1=2.
 d = b++; alert(d); // Выведет 1 потому,что запись в постфиксной форме и сначала возвращается значение, а потом совершается инкремирование. 
 c = (2+ ++a); alert(c); // Переменная а=2, выполняется действие ++а, а=3, 2+3=5;
@@ -29,17 +29,17 @@ if (a>=0 && b>=0) alert(a-b);
 if (a<0 && b<0) alert(a*b);
 if (a<0 && b>=0 || a>=0 && b<0) alert(a+b); //Сначала я сделала вот так, и код работал, но меня коробило написание.И я вспомнила пр else if...
 
-let a=5;
+let a=-5;
 let b=3;
 if (a>=0 && b>=0) {
     alert(a-b);
 } else if (a<0 && b<0) {
     alert(a*b);
-} else if (a<0 && b>=0 || a>=0 && b<0) {
+} else {
      alert(a+b);
 } // Понятно, что этот вариант более верен, но имеет место быть  первый вариант написания или это грубая ошибка?
 
-let a=5;
+/*let a=5;
 switch (a) {
     case 1:
         console.log(1);
@@ -104,15 +104,16 @@ alert (answer3);
 function mathOperation(arg1, arg2, operation) {
     switch (operation) {
         case 'сумма' :
-            alert(arg1+arg2);
-            break;
+           return useNumber (agd1, arg2);
         case 'разность':
-            alert(arg1-arg2);
-            break;   
+            return useNumber1 (arg1, arg2);
+        case 'произведение':
+            return useNumber2 (arg1,arg2);
+        case 'деление':
+            return useNumber3 (arg1, arg2);         
     }        
 }
-mathOperation (2, 3 ,'сумма');
-mathOperation (2, 3 ,'разность');
+
 
 function power(val, pow) {
     if (pow==1) { 
@@ -122,5 +123,5 @@ function power(val, pow) {
     }    
 }
 alert (power (2, 3));
-
+*/
 

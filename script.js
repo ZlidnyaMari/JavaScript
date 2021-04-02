@@ -143,7 +143,7 @@ function primeNumbers (num) {
 }
 console.log (primeNumbers(100));*/
 
-function onePrimeNumber (num) { 
+/*function onePrimeNumber (num) { 
     let i=2
     while (i<num) {
         if(num%i===0) return false;
@@ -161,4 +161,6 @@ function primeNumbers (num) {
     }
     return rezalt;
 }
-console.log (primeNumbers(100));
+console.log (primeNumbers(100));*/
+
+for (let i=0; i<=9; i++) console.log(i);

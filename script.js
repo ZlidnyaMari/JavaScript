@@ -125,9 +125,29 @@ function power(val, pow) {
 alert (power (2, 3));
 */
 
-function onePrimeNumber (num) {
+/*function onePrimeNumber (num) { 
     for(let i = 2; i<num; i++) {
         if(num%i===0) return false;
+    }
+    return num>1;
+}
+function primeNumbers (num) {
+    const rezalt = [];
+
+    for (let a = 2; a<=num; a++) {
+        if(onePrimeNumber(a)) {
+            rezalt.push(a);
+        }
+    }
+    return rezalt;
+}
+console.log (primeNumbers(100));*/
+
+function onePrimeNumber (num) { 
+    let i=2
+    while (i<num) {
+        if(num%i===0) return false;
+        i++
     }
     return num>1;
 }

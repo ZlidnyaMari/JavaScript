@@ -125,7 +125,7 @@ function power(val, pow) {
 alert (power (2, 3));
 */
 
-/*function onePrimeNumber (num) { 
+function onePrimeNumber (num) { 
     for(let i = 2; i<num; i++) {
         if(num%i===0) return false;
     }
@@ -141,9 +141,9 @@ function primeNumbers (num) {
     }
     return rezalt;
 }
-console.log (primeNumbers(100));*/
+console.log (primeNumbers(100));
 
-/*function onePrimeNumber (num) { 
+function onePrimeNumber (num) { 
     let i=2
     while (i<num) {
         if(num%i===0) return false;
@@ -163,7 +163,7 @@ function primeNumbers (num) {
 }
 console.log (primeNumbers(100));
 
-for (let i=0; i<=9; i++) console.log(i);*/
+for (let i=0; i<=9; i++) console.log(i);
 
 let arr = [
     ['футболка', 1, 250],
@@ -178,3 +178,13 @@ function countBacketPrice (arr) {
 return summ;
 }
 console.log(countBacketPrice(arr));
+
+for(var i = 1; i < 40; i += 2) {
+    console.log( Array(i).fill('*').join(' ') ); 
+}
+//скажу честно, такое решение задачи я нашла в интернете. И решила его оставить, потому что нашла для себя такой 
+//метод как fill, который меняет значения массива на то которое ты ему задаешь в скобках(value). Причем можно это сделать 
+//от определенного элмента (start) до определнного элемента (end). А так же join, который объеденяет все элементы массива.
+// Объеденить можно так же по разному и через - и через +. А пишу я все это, что бы вы поняли, что я не просто списала 
+//решение а поработала и разобралась в нем)) Единственное, что мне не совсем понятно запись array(i). Это такие образом 
+//массив определяется и говорится что в него будет записан весь результат цикла?  

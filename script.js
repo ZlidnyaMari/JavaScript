@@ -161,6 +161,20 @@ function primeNumbers (num) {
     }
     return rezalt;
 }
-console.log (primeNumbers(100));*/
+console.log (primeNumbers(100));
 
-for (let i=0; i<=9; i++) console.log(i);
+for (let i=0; i<=9; i++) console.log(i);*/
+
+let arr = [
+    ['футболка', 1, 250],
+    ['шорты', 1, 150],
+    ['кроссовки', 2, 500],
+]
+function countBacketPrice (arr) {
+    let summ = 0;
+    for (let i=0; i<arr.length; i++) {
+        summ += arr[i][1] * arr [i][2];
+    }
+return summ;
+}
+console.log(countBacketPrice(arr));

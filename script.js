@@ -194,9 +194,9 @@ function number (num) {
         return {}
     }
     return {
-        units: num/10,
-        tens: (num /10) %10,
-        hundreds: num/100,
+        units: num%10,
+        tens: Math.floor(num /10) %10,
+        hundreds: Math.floor (num/100),
     };
 }
-console.log (numder(123));
+console.log (number(123));

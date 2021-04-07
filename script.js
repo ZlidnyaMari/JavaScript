@@ -200,3 +200,24 @@ function number (num) {
     };
 }
 console.log (number(123));
+
+let obj = {
+    goods: [
+{
+    description: 'футболка',
+    quantity: 1,
+    price: 250,
+},
+{
+    description: 'кроссовки',
+    quantity: 2,
+    price: 500,
+}
+],
+
+countBacketPrice () {
+   return this.goods.reduce((accum, currentValue) => accum + currentValue.quantity*currentValue.price, 0);
+    }
+}
+console.log(obj.countBacketPrice());
+

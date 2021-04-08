@@ -125,3 +125,26 @@ function power(val, pow) {
 alert (power (2, 3));
 */
 
+const table = document.createElement('table');
+table.style.border = '2px solid black';
+table.style.width = '200px';
+table.style.height = '200px';
+function chessBoard () {
+    for (let i = 1; i < 9; i++) {
+        const trElem = document.createElement ('tr');
+        table.appendChild(trElem);   
+        for (let j = 1; j < 9; j++) {
+            const tdElem = document.createElement ('td');
+            trElem.appendChild(tdElem);
+            if((i +j) % 2 === 0) {
+                tdElem.style.backgroundColor = 'black';
+            } else {
+                tdElem.style.backgroundcolor = "white";
+            }
+        } 
+    }
+}
+document.body.appendChild(table);
+chessBoard (); 
+// я без понятия как доску пронумеровать.
+

@@ -187,7 +187,7 @@ for(var i = 1; i < 40; i += 2) {
 //от определенного элмента (start) до определнного элемента (end). А так же join, который объеденяет все элементы массива.
 // Объеденить можно так же по разному и через - и через +. А пишу я все это, что бы вы поняли, что я не просто списала 
 //решение а поработала и разобралась в нем)) Единственное, что мне не совсем понятно запись array(i). Это такие образом 
-//массив определяется и говорится что в него будет записан весь результат цикла?  */
+//массив определяется и говорится что в него будет записан весь результат цикла?  
 
 function number (num) {
     if(num<0 || num>999) {
@@ -219,68 +219,5 @@ countBacketPrice () {
    return this.goods.reduce((accum, currentValue) => accum + currentValue.quantity*currentValue.price, 0);
     }
 }
-console.log(obj.countBacketPrice());
+console.log(obj.countBacketPrice()); */
 
-function onePrimeNumber (num) { 
-    for(let i = 2; i<num; i++) {
-        if(num%i===0) return false;
-    }
-    return num>1;
-}
-function primeNumbers (num) {
-    const rezalt = [];
-
-    for (let a = 2; a<=num; a++) {
-        if(onePrimeNumber(a)) {
-            rezalt.push(a);
-        }
-    }
-    return rezalt;
-}
-console.log (primeNumbers(100));
-
-function onePrimeNumber (num) { 
-    let i=2
-    while (i<num) {
-        if(num%i===0) return false;
-        i++
-    }
-    return num>1;
-}
-function primeNumbers (num) {
-    const rezalt = [];
-
-    for (let a = 2; a<=num; a++) {
-        if(onePrimeNumber(a)) {
-            rezalt.push(a);
-        }
-    }
-    return rezalt;
-}
-console.log (primeNumbers(100));
-
-for (let i=0; i<=9; i++) console.log(i);
-
-let arr = [
-    ['футболка', 1, 250],
-    ['шорты', 1, 150],
-    ['кроссовки', 2, 500],
-]
-function countBacketPrice (arr) {
-    let summ = 0;
-    for (let i=0; i<arr.length; i++) {
-        summ += arr[i][1] * arr [i][2];
-    }
-return summ;
-}
-console.log(countBacketPrice(arr));
-
-for(var i = 1; i < 40; i += 2) {
-    console.log( Array(i).fill('*').join(' ') ); 
-}
-//скажу честно, такое решение задачи я нашла в интернете. И решила его оставить, потому что нашла для себя такой 
-//метод как fill, который меняет значения массива на то которое ты ему задаешь в скобках(value). Причем можно это сделать 
-//от определенного элмента (start) до определнного элемента (end). А так же join, который объеденяет все элементы массива.
-// Объеденить можно так же по разному и через - и через +. А пишу я все это, что бы вы поняли, что я не просто списала 
-//решение а поработала и разобралась в нем)) Единственное, что мне не совсем понятно запись array(i). Это такие образом 
-//массив определяется и говорится что в него будет записан весь результат цикла?  

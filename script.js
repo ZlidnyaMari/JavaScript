@@ -122,8 +122,10 @@ function power(val, pow) {
         return val * power(val, pow-1);   
     }    
 }
-alert (power (2, 3));
-*/
+alert (power (2, 3));*/
+
+
+
 
 const table = document.createElement('table');
 table.style.border = '2px solid black';
@@ -148,3 +150,30 @@ document.body.appendChild(table);
 chessBoard (); 
 // я без понятия как доску пронумеровать.
 
+
+
+
+let obj = {
+    goods: [
+{
+    description: 'футболка',
+    quantity: 1,
+    price: 250,
+},
+{
+    description: 'кроссовки',
+    quantity: 2,
+    price: 500,
+}
+]
+}
+let countBacketPrice = obj.goods.reduce((accum, currentValue) => accum + currentValue.quantity*currentValue.price, 0);
+let productList = document.getElementById('product');
+function output() {
+    if(obj.goods.length>0) {
+        productList.insertAdjacentHTML('beforeend', `В корзине ${obj.goods.length} позиции, общей стоимостью ${countBacketPrice}.`);
+} else {
+        productList.textContent = "Корзина пуста";
+} 
+} 
+output ();   

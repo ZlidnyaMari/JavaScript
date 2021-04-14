@@ -153,8 +153,9 @@ chessBoard ();
 
 
 
-let obj = {
-    goods: [
+let cart = {
+productList: null,
+goods: [
 {
     description: 'футболка',
     quantity: 1,
@@ -165,15 +166,20 @@ let obj = {
     quantity: 2,
     price: 500,
 }
-]
-}
-let countBacketPrice = obj.goods.reduce((accum, currentValue) => accum + currentValue.quantity*currentValue.price, 0);
-let productList = document.getElementById('product');
-function output() {
-    if(obj.goods.length>0) {
-        productList.insertAdjacentHTML('beforeend', `В корзине ${obj.goods.length} позиции, общей стоимостью ${countBacketPrice}.`);
+],
+init (){
+this.productList = document.getElementById('product');
+this.output();
+},
+countBacketPrice() {
+return this.goods.reduce((accum, currentValue) => accum + currentValue.quantity*currentValue.price, 0);
+},
+output() {
+    if(this.goods.length>0) {
+        this.productList.insertAdjacentHTML('beforeend', `В корзине ${this.goods.length} позиции, общей стоимостью ${this.countBacketPrice()}.`);
 } else {
-        productList.textContent = "Корзина пуста";
-} 
-} 
-output ();   
+        this.productList.textContent = "Корзина пуста";
+}
+}
+}
+ cart.init();   

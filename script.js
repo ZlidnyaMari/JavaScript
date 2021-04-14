@@ -167,8 +167,12 @@ product: [
     ],
 init () {
     this.catalogBlock = document.querySelector('.catalog');
-
+    this.catalogBlock.addEventListener('click', event => addInCart(event));
     this.output();
+    
+},
+addInCart (event){
+    
 },
 output () {
     if(this.product.length>0) {
@@ -186,7 +190,7 @@ catalogProduct (){
 catalogItem (item) {
     return  `<div> 
             <p>${item.description}</p>
-            <p>${item.price}</p>
+            <p>${item.price} руб.</p>
             <button class = 'buy_product'>Купить</button>
             </div>`;
 },

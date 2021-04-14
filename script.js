@@ -150,7 +150,52 @@ document.body.appendChild(table);
 chessBoard (); 
 // я без понятия как доску пронумеровать.*/
 
+let catalog = {
+catalogBlock: null,
+cart: null,
+product: [
+        {
+            id: 123,
+            description: 'Футболка',
+            price: 250,
+        },
+        {
+            id: 124,
+            description: 'Кроссовки',
+            price: 500,
+        } 
+    ],
+init () {
+    this.catalogBlock = document.querySelector('.catalog');
 
+    this.output();
+},
+output () {
+    if(this.product.length>0) {
+        this.catalogProduct()
+    }else{
+        this.catalogEmpty();
+    }
+},
+catalogProduct (){
+    this.catalogBlock.innerHTML = '';
+    this.product.forEach(item => {
+        this.catalogBlock.insertAdjacentHTML('beforeend', this.catalogItem(item));
+    });
+},
+catalogItem (item) {
+    return  `<div> 
+            <p>${item.description}</p>
+            <p>${item.price}</p>
+            <button class = 'buy_product'>Купить</button>
+            </div>`;
+},
+catalogEmpty () {
+    this.catalogBlock.innerHTML = '';
+    this.catalogBlock.textContent = 'Каталог пуст'
+}
+
+};
 
 
 let cart = {
@@ -189,4 +234,5 @@ output() {
 }
 }
 }
- cart.init();   
+catalog.init(); 
+cart.init();   

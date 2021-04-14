@@ -122,7 +122,7 @@ function power(val, pow) {
         return val * power(val, pow-1);   
     }    
 }
-alert (power (2, 3));*/
+alert (power (2, 3));
 
 
 
@@ -148,13 +148,14 @@ function chessBoard () {
 }
 document.body.appendChild(table);
 chessBoard (); 
-// я без понятия как доску пронумеровать.
+// я без понятия как доску пронумеровать.*/
 
 
 
 
 let cart = {
-productList: null,
+cartProductList: null,
+cartProductButton: null,
 goods: [
 {
     description: 'футболка',
@@ -168,17 +169,23 @@ goods: [
 }
 ],
 init (){
-this.productList = document.getElementById('product');
+this.cartProductList = document.getElementById('product');
+this.cartProductButton = document.querySelector('.button')
+this.cartProductButton.addEventListener ('click', () => this.clearCart());
 this.output();
+},
+clearCart() {
+    this.goods = [];
+    this.output();
 },
 countBacketPrice() {
 return this.goods.reduce((accum, currentValue) => accum + currentValue.quantity*currentValue.price, 0);
 },
 output() {
     if(this.goods.length>0) {
-        this.productList.insertAdjacentHTML('beforeend', `В корзине ${this.goods.length} позиции, общей стоимостью ${this.countBacketPrice()}.`);
+        this.cartProductList.insertAdjacentHTML('beforeend', `В корзине ${this.goods.length} позиции, общей стоимостью ${this.countBacketPrice()}.`);
 } else {
-        this.productList.textContent = "Корзина пуста";
+        this.cartProductList.textContent = "Корзина пуста";
 }
 }
 }

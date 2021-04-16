@@ -169,10 +169,12 @@ init () {
     this.catalogBlock = document.querySelector('.catalog');
     this.catalogBlock.addEventListener('click', event => addInCart(event));
     this.output();
+    this.addInCart();
     
 },
 addInCart (event){
     
+
 },
 output () {
     if(this.product.length>0) {

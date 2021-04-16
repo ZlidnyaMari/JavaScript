@@ -165,14 +165,15 @@ product: [
             price: 500,
         } 
     ],
-init () {
+init (catalogBlock, cart) { // и еще мне не понятен момент тут, вы на видео используете классы, которые мы еще не проходили, я не знаю как мне обойти этот момент не используя классы. 
     this.catalogBlock = document.querySelector('.catalog');
     this.catalogBlock.addEventListener('click', event => addInCart(event));
+    this.cart = cart;
     this.output();
     this.addInCart();
     
 },
-addInCart (event){
+addInCart (event){ // извините но я не могу понять, сколько бы я раз не смотрела что мы здесь делаем. 
     
 
 },

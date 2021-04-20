@@ -165,8 +165,8 @@ product: [
             price: 500,
         } 
     ],
-init (catalogBlock, cart) { // и еще мне не понятен момент тут, вы на видео используете классы, которые мы еще не проходили, я не знаю как мне обойти этот момент не используя классы. 
-    this.catalogBlock = document.querySelector('.catalog');
+init (catalogClass, cart) { 
+    this.catalogBlock = document.querySelector(`.${catalogClass}`);
     this.catalogBlock.addEventListener('click', event => addInCart(event));
     this.cart = cart;
     this.output();
@@ -210,21 +210,36 @@ cartProductList: null,
 cartProductButton: null,
 goods: [
 {
+    id: 123,
     description: 'футболка',
     quantity: 1,
     price: 250,
 },
 {
+    id: 124,
     description: 'кроссовки',
     quantity: 2,
     price: 500,
 }
 ],
-init (){
-this.cartProductList = document.getElementById('product');
-this.cartProductButton = document.querySelector('.button')
+init (cartClass, clrCartButton){
+this.cartProductList = document.querySelector(`.${cartClass}`);
+this.cartProductButton = document.querySelector(`.${clrCartButton}`)
 this.cartProductButton.addEventListener ('click', () => this.clearCart());
 this.output();
+},
+addInCart(product){  // откуда мы берем product. ссылка на товар вы говорите, но где мы это ранее прописали?
+    if (product) {
+        const findInBasket = this.goods.find(({id}) => product.id === id);
+        if (findInBasket) {
+            findInBasket.quantity++;
+        } else {
+            this.goods.push({...product, quantity: 1});
+        }
+        this.render();
+    } else {
+        alert('Ошибка добавления!');
+    }
 },
 clearCart() {
     this.goods = [];
@@ -235,11 +250,25 @@ return this.goods.reduce((accum, currentValue) => accum + currentValue.quantity*
 },
 output() {
     if(this.goods.length>0) {
-        this.cartProductList.insertAdjacentHTML('beforeend', `В корзине ${this.goods.length} позиции, общей стоимостью ${this.countBacketPrice()}.`);
+        this.cartGoods();
 } else {
+        this.cartProductList.innerHTML = '';
         this.cartProductList.textContent = "Корзина пуста";
 }
+},
+cartGoods() {
+    this.cartProductList.innerHTML = '';
+    this.goods.forEach(item => {
+        this.cartProductList.insertAdjacentHTML('beforeend', this.cartItem(item));
+    });
+},
+cartItem(item) {
+    return `<div>
+                <h3>${item.description}</h3>
+                <p>${item.quantity} шт.</p>
+                <p>${item.price} руб.</p>
+            </div>`;
 }
 }
-catalog.init(); 
-cart.init();   
+catalog.init('catalog', cart); 
+cart.init('product', 'button');   
